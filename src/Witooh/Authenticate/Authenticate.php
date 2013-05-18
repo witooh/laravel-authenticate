@@ -69,8 +69,8 @@ class Authenticate implements IAuthenticate
     {
         $this->validator->setAttributes($this->credentials);
 
-        if ($validator->fails()) {
-            return ResMsg::validation($validator->getErrors());
+        if ($this->validator->fails()) {
+            return ResMsg::validation($this->validator->getErrors());
         }
 
         return $this->behavior->login($this->credentials, $this->remember);
