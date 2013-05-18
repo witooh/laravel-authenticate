@@ -5,6 +5,7 @@ use Witooh\Authenticate\Validators\LoginValidator;
 use ResMsg;
 use Witooh\Validators\IValidator;
 use Auth;
+use Session;
 
 class Authenticate implements IAuthenticate
 {
