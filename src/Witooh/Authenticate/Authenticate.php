@@ -4,7 +4,6 @@ namespace Witooh\Authenticate;
 use Witooh\Authenticate\Validators\LoginValidator;
 use ResMsg;
 use Witooh\Validators\IValidator;
-use Hash;
 
 class Authenticate implements IAuthenticate
 {
@@ -39,7 +38,7 @@ class Authenticate implements IAuthenticate
     public function setCredentials($username, $password)
     {
         $this->credentials['username'] = $username;
-        $this->credentials['password'] = Hash::make($password);
+        $this->credentials['password'] = $password;
     }
 
     public function setValidator(IValidator $validator){
