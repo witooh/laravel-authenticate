@@ -4,6 +4,7 @@ namespace Witooh\Authenticate;
 use Witooh\Authenticate\Validators\LoginValidator;
 use ResMsg;
 use Witooh\Validators\IValidator;
+use Auth;
 
 class Authenticate implements IAuthenticate
 {
