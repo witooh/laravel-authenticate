@@ -1,7 +1,7 @@
 <?php
 namespace Witooh\Authenticate;
 
-use Services\Authenticate\Validators\LoginValidator;
+use Witooh\Authenticate\Validators\LoginValidator;
 use ResMsg;
 use Witooh\Validators\IValidator;
 use Hash;
@@ -67,7 +67,7 @@ class Authenticate implements IAuthenticate
      */
     public function login()
     {
-        $validator = new LoginValidator($this->credentials);
+        $this->validator->setAttributes($this->credentials);
 
         if ($validator->fails()) {
             return ResMsg::validation($validator->getErrors());
@@ -89,7 +89,10 @@ class Authenticate implements IAuthenticate
      */
     public function logout()
     {
-        return $this->behavior->logout();
+        Auth::logout();
+        Session::flush();
+
+        return ResMsg::success();
     }
 
     /**

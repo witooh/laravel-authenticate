@@ -15,11 +15,6 @@ interface IAuthenticateBehavior {
     /**
      * @return ResMsg
      */
-    public function logout();
-
-    /**
-     * @return ResMsg
-     */
     public function getLoginInfo();
 
     public function afterLogin($credentials);
