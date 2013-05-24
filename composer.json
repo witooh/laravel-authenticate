@@ -22,5 +22,10 @@
             "Witooh\\Authenticate": "src/"
         }
     },
+    "scripts": {
+        "post-install-cmd": [
+            "php artisan config:publish witooh/authenticate"
+        ]
+    },
     "minimum-stability": "dev"
 }
