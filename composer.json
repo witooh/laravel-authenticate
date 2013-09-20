@@ -10,9 +10,10 @@
     "require": {
         "php": ">=5.3.0",
         "illuminate/support": "4.0.x",
-        "witooh/validators": "dev-master",
-        "witooh/permission": "dev-master",
-        "witooh/basic-message": "dev-master"
+        "illuminate/hashing": "4.0.x",
+        "illuminate/auth": "4.0.x",
+        "witooh/visitor": "master"
+
     },
     "autoload": {
         "classmap": [

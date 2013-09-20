@@ -1,9 +1,6 @@
 <?php namespace Witooh\Authenticate;
 
 use Illuminate\Support\ServiceProvider;
-use Illuminate\Support\Facades\Config;
-use Illuminate\Support\Facades\App;
-use Witooh\Authenticate\Validators\LoginValidator;
 
 class AuthenticateServiceProvider extends ServiceProvider {
 
@@ -21,7 +18,7 @@ class AuthenticateServiceProvider extends ServiceProvider {
 	 */
 	public function boot()
 	{
-        $this->package('witooh/authenticate');
+		$this->package('witooh/authenticate');
 	}
 
 	/**
@@ -31,15 +28,7 @@ class AuthenticateServiceProvider extends ServiceProvider {
 	 */
 	public function register()
 	{
-        $this->app['Authenticate'] = $this->app->share(function($app){
-            $auth = new Authenticate();
-            $behavior = Config::get('authenticate::default_behavior');
-            $validator = new LoginValidator();
-            $validator->setRule(Config::get('authenticate::rule'));
-            $auth->setBehavior(new $behavior);
-            $auth->setValidator($validator);
-            return $auth;
-        });
+		//
 	}
 
 	/**
