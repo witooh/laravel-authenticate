@@ -13,7 +13,10 @@
         "illuminate/hashing": "4.0.x",
         "illuminate/auth": "4.0.x",
         "witooh/visitor": "master"
-
+    },
+    "require-dev": {
+        "mockery/mockery": "dev-master",
+        "way/laravel-test-helpers": "dev-master"
     },
     "autoload": {
         "classmap": [
